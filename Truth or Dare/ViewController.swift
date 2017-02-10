@@ -10,16 +10,34 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBOutlet weak var imgStart: UIImageView!
+    
+    var truthNumber = 1
+    var dareNumber = 1
+    var aTruthImg: UIImageView?
+    var aDareImg: UIImageView?
+    @IBAction func btnTruth(_ sender: Any) {
+        print("\(truthNumber)")
+        print("Truth button was tapped!")
+        imgStart.image = UIImage(named: "truth\(truthNumber)")
+        if truthNumber == 3 {
+            truthNumber = 1
+        } else {
+            truthNumber+=1
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func btnDare(_ sender: Any) {
+        print("\(dareNumber)")
+        print("Dare button was tapped!")
+        imgStart.image = UIImage(named: "dare\(dareNumber)")
+        if dareNumber == 3{
+        dareNumber = 1
+        } else {
+            dareNumber+=1
+        }
     }
-
-
+    
+    
 }
 
